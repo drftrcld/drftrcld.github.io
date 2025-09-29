@@ -1,8 +1,118 @@
+body {
+  background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: #222;
+  margin: 0;
+}
+
 #root {
-  max-width: 1280px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-me-row .about-me-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.about-me-left {
+  flex: 0 0 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  object-position: 50% 10%;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.about-me-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .about-me-row .about-me-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .about-me-left {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+  }
+}
+
+.about-me h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0073b1;
+  letter-spacing: -1px;
+}
+
+.about-me section {
+  background: linear-gradient(100deg, #ffffff 80%, #e3f0ff 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 1.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #0073b1;
+  transition: box-shadow 0.2s;
+}
+.about-me section:hover {
+  box-shadow: 0 4px 24px rgba(0,115,177,0.08);
+}
+
+.about-me h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #005580;
+}
+
+.about-me ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.about-me a {
+  color: #0073b1;
+  text-decoration: none;
+  font-weight: 500;
+  background: linear-gradient(90deg, #0073b1 60%, #00c6fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.about-me a:hover {
+  text-decoration: underline;
+  background: linear-gradient(90deg, #005580 60%, #00c6fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .logo {
@@ -33,10 +143,6 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}
+
+
