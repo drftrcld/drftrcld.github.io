@@ -2,6 +2,7 @@
 
 import './App.css'
 import profilePic from './assets/20250918_132814-EDIT.jpg';
+import jKeyIcon from './assets/icons8-j-key-50.png';
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
           <h1>Jorge Arévalo</h1>
           <p><strong>Product Engineer</strong><br />
           Escuela Politécnica Nacional, Ecuador<br />
-          <a href="https://www.linkedin.com/in/jorgeearevalo/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <a href="https://www.linkedin.com/in/jorgeearevalo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <br/>
+          <a href="https://github.com/drftrcld" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </p>
           <section>
             <h2>About</h2>
             <p>I design and develop products end to end, from first concept to real-world use. My work spans software, embedded systems, electronics, and product design. I believe meaningful solutions require understanding context, constraints, and the people who use them. My approach is human-centered, technically grounded, and focused on delivering results that matter.</p>
@@ -66,8 +70,8 @@ function App() {
           <section>
             <h2>Contact</h2>
             <ul>
-              <li>Email: <a href="mailto:jorge@coyoteindigo.com">jorge@coyoteindigo.com</a></li>
-              <li>GitHub: <a href="https://github.com/drftrcld" target="_blank" rel="noopener noreferrer">drftrcld</a></li>
+              <li>Email: <a href="mailto:contact@jorgearevalo.net">contact@jorgearevalo.net</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/jorgeearevalo/" target="_blank" rel="noopener noreferrer">jorgeearevalo</a></li>
             </ul>
           </section>
         </div>
