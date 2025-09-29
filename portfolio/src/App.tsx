@@ -2,8 +2,42 @@
 
 import './App.css'
 import profilePic from './assets/20250918_132814-EDIT.jpg';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    // Inject Calendly CSS
+    const link = document.createElement('link');
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    // Inject Calendly JS
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Initialize badge widget after script loads
+    script.onload = function() {
+      // @ts-ignore
+      if (window.Calendly) {
+        // @ts-ignore
+        window.Calendly.initBadgeWidget({
+          url: 'https://calendly.com/1-jorge-arevalo/30min',
+          text: 'Schedule time with me',
+          color: '#0069ff',
+          textColor: '#ffffff',
+          branding: true
+        });
+      }
+    };
+
+    return () => {
+      document.head.removeChild(link);
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <main className="about-me about-me-row">
       <div className="about-me-container">
@@ -72,6 +106,7 @@ function App() {
               <li>Email: <a href="mailto:contact@jorgearevalo.net">contact@jorgearevalo.net</a></li>
               <li>LinkedIn: <a href="https://www.linkedin.com/in/jorgeearevalo/" target="_blank" rel="noopener noreferrer">jorgeearevalo</a></li>
             </ul>
+            {/* Calendly badge widget will appear automatically */}
           </section>
         </div>
       </div>
