@@ -71,11 +71,12 @@ function App() {
           </div>
           <div className="about-me-right">
             <h1>Jorge Arévalo</h1>
-            <p><strong>Product Engineer</strong><br />
-            Escuela Politécnica Nacional, Ecuador<br />
-            <a href="https://www.linkedin.com/in/jorgeearevalo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <br/>
-            <a href="https://github.com/drftrcld" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <p>
+              <strong>Electronics Engineer</strong><br />
+              <span style={{ fontWeight: 500, color: '#0073b1' }}>12+ years experience (since 2013)</span><br />
+              <a href="https://www.linkedin.com/in/jorgeearevalo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <br/>
+              <a href="https://github.com/drftrcld" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
             <section>
               <h2>About</h2>
@@ -97,15 +98,15 @@ function App() {
             <section>
               <h2>Experience</h2>
               <ul>
-                <li><strong>Product Engineer (Self-employed)</strong><br />Aug 2025 – Present | Remote<br />Embedded Devices, Embedded Software</li>
-                <li><strong>Software Engineer (Trilogy)</strong><br />Feb 2024 – Aug 2025 | Remote<br />Artificial Intelligence (AI), JavaScript</li>
-                <li><strong>Product Engineer (Freelance)</strong><br />Sep 2021 – Jan 2024 | Remote<br />Back-End Web Development, AI</li>
-                <li><strong>Full Stack Software Developer (PRODUBANCO - Grupo Promerica)</strong><br />Aug 2015 – Mar 2021 | Quito, Ecuador<br />Back-End Web Development, CSS</li>
+                <li><strong>Product Engineer (Self-employed)</strong><br />Aug 2025 – Present · Remote<br />Product Engineering · Embedded Devices · Electronic Engineering</li>
+                <li><strong>Full Stack Software Developer (Trilogy)</strong><br />Feb 2024 – Aug 2025 · Remote<br />AI · Full-Stack Development · Python · JavaScript · AWS · C# · C++</li>
+                <li><strong>Product Engineer (Freelance)</strong><br />Sep 2021 – Jan 2024 · Remote<br />Embedded Systems · Web Development · PCB Design · Python · C++</li>
+                <li><strong>Full Stack Software Developer (PRODUBANCO - Grupo Promerica)</strong><br />Aug 2013 – Mar 2021 · Quito, Ecuador<br />Full-Stack Development · Project Management</li>
               </ul>
             </section>
             <section>
               <h2>Education</h2>
-              <p><strong>Escuela Politécnica Nacional</strong><br />Bachelor of Engineering, Electronics and Control Systems (2007–2013)</p>
+              <p><strong>Escuela Politécnica Nacional</strong><br />Bachelor's in Electronic Engineering and Control Systems (2007–2013)</p>
             </section>
             <section>
               <h2>Certifications</h2>
@@ -117,8 +118,7 @@ function App() {
             <section>
               <h2>Languages</h2>
               <ul>
-                <li>English (Full professional proficiency)</li>
-                <li>Spanish (Native or bilingual proficiency)</li>
+                <li>Spanish (Native)</li>
               </ul>
             </section>
             <section>
