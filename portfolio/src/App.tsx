@@ -2,7 +2,6 @@
 
 import './App.css'
 import profilePic from './assets/20250918_132814-EDIT.jpg';
-import jKeyIcon from './assets/icons8-j-key-50.png';
 
 function App() {
   return (
