@@ -118,6 +118,7 @@ function App() {
             <section>
               <h2>Languages</h2>
               <ul>
+                <li>English (Full professional proficiency)</li>
                 <li>Spanish (Native)</li>
               </ul>
             </section>
