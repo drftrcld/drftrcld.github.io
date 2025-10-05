@@ -1,63 +1,21 @@
 
 
-import './App.css'
+import './App.css';
 import profilePic from './assets/20250918_132814-EDIT.jpg';
 import darkModeIcon from './assets/icons8-dark-mode-64.png';
 import moonIcon from './assets/icons8-moon-48.png';
 import sunIcon from './assets/icons8-sun-48.png';
 import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import ProjectMemoApp from './ProjectMemoApp';
 
-function App() {
-  // Manual dark mode switch
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'system');
 
-  useEffect(() => {
-    const body = document.body;
-    body.classList.remove('dark');
-    body.classList.remove('light');
-    if (theme === 'dark') {
-      body.classList.add('dark');
-    } else if (theme === 'light') {
-      body.classList.add('light');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+interface MainPortfolioProps {
+  theme: string;
+  setTheme: (theme: string) => void;
+}
 
-  // Listen for system theme changes if 'system' is selected
-  // No need for system theme listener, prefers-color-scheme will handle it
-  useEffect(() => {
-    // Inject Calendly CSS
-    const link = document.createElement('link');
-    link.href = 'https://assets.calendly.com/assets/external/widget.css';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-
-    // Inject Calendly JS
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Initialize badge widget after script loads
-    script.onload = function() {
-      // @ts-ignore
-      if (window.Calendly) {
-        // @ts-ignore
-        window.Calendly.initBadgeWidget({
-          url: 'https://calendly.com/1-jorge-arevalo/30min',
-          text: 'Schedule time with me',
-          color: '#0069ff',
-          textColor: '#ffffff',
-          branding: true
-        });
-      }
-    };
-
-    return () => {
-      document.head.removeChild(link);
-      document.body.removeChild(script);
-    };
-  }, []);
+function MainPortfolio({ theme, setTheme }: MainPortfolioProps) {
   return (
     <>
       <main className="about-me about-me-row">
@@ -105,6 +63,14 @@ function App() {
               </ul>
             </section>
             <section>
+              <h2>Projects</h2>
+              <ul>
+                <li>
+                  <Link to="/shotnote">Shotnote for Mac</Link>
+                </li>
+              </ul>
+            </section>
+            <section>
               <h2>Education</h2>
               <p><strong>Escuela Politécnica Nacional</strong><br />Bachelor's in Electronic Engineering and Control Systems (2007–2013)</p>
             </section>
@@ -133,7 +99,7 @@ function App() {
           </div>
         </div>
       </main>
-  <form style={{ position: 'fixed', left: '5%', bottom: '1rem', zIndex: 1000, background: 'rgba(255,255,255,0.25)', borderRadius: '16px', boxShadow: '0 2px 12px rgba(0,0,0,0.10)', padding: '0.5rem 1rem', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
+      <form style={{ position: 'fixed', left: '5%', bottom: '1rem', zIndex: 1000, background: 'rgba(255,255,255,0.25)', borderRadius: '16px', boxShadow: '0 2px 12px rgba(0,0,0,0.10)', padding: '0.5rem 1rem', display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'center' }}>
         <label style={{ cursor: 'pointer' }}>
           <input
             type="radio"
@@ -187,7 +153,63 @@ function App() {
         </label>
       </form>
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'system');
+
+  useEffect(() => {
+    const body = document.body;
+    body.classList.remove('dark');
+    body.classList.remove('light');
+    if (theme === 'dark') {
+      body.classList.add('dark');
+    } else if (theme === 'light') {
+      body.classList.add('light');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    script.onload = function() {
+      // @ts-ignore
+      if (window.Calendly) {
+        // @ts-ignore
+        window.Calendly.initBadgeWidget({
+          url: 'https://calendly.com/1-jorge-arevalo/30min',
+          text: 'Schedule time with me',
+          color: '#0069ff',
+          textColor: '#ffffff',
+          branding: true
+        });
+      }
+    };
+
+    return () => {
+      document.head.removeChild(link);
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPortfolio theme={theme} setTheme={setTheme} />} />
+  <Route path="/shotnote" element={<ProjectMemoApp />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
