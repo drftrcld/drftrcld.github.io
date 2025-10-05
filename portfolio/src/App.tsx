@@ -6,7 +6,7 @@ import darkModeIcon from './assets/icons8-dark-mode-64.png';
 import moonIcon from './assets/icons8-moon-48.png';
 import sunIcon from './assets/icons8-sun-48.png';
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import ProjectMemoApp from './ProjectMemoApp';
 
 
@@ -203,12 +203,12 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<MainPortfolio theme={theme} setTheme={setTheme} />} />
-  <Route path="/shotnote" element={<ProjectMemoApp />} />
+        <Route path="/shotnote" element={<ProjectMemoApp />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
